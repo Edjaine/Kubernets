@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pod-angular
+spec:
+  selector:
+    matchLabels:
+      app: pod-angular
+  template:
+    metadata:
+      labels:
+        app: pod-angular
+    spec:
+      containers:
+      - name: pod-angular
+        image: c83edsoliveiraxxx/edjaine-meu-projeto:v1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
